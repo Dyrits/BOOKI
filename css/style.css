@@ -412,7 +412,10 @@ a {
 
 /* Footer : La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
 
-.footer-background { background-color: #F2F2F2; }
+.footer {
+  padding-block: 20px;
+  background-color: #F2F2F2;
+}
 
 .flex-footer-row {
   display: flex;
@@ -672,4 +675,13 @@ a {
     margin: 0;
     padding: var(--16px) var(--19px);
   }
+
+  .footer {  padding-block: 30px; }
+
+  .flex-footer-row {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .flex-footer-column { margin-left: 30px;}
 }
