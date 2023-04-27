@@ -127,7 +127,7 @@ body { line-height: 1; }
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   :root {
     /*
       Modification des variables pour des tailles dynamiques de 320px à 768px.
