@@ -1,5 +1,3 @@
-// _mixins.scss
-
 @function dynamic-size($viewport, $size) {
   $viewport: $viewport;
   @if $viewport == 768 { $viewport: 375; }

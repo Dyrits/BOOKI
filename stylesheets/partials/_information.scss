@@ -1,4 +1,4 @@
-@import "mixins";
+@import "utilities/mixins";
 
 /* -- INFORMATION SECTION -- */
 
@@ -7,15 +7,12 @@
   flex-direction: column;
   @include dynamic-sizes(gap, 30, (1024: 30, 768: 35));
   @include dynamic-sizes(padding-inline, 0, (1024: 0, 768: 20));
-}
-
-/* -- Headline -- */
-/* La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
-
-.headline {
-  display: flex;
-  flex-direction: column;
-  @include dynamic-sizes(gap, 8, (1024: 8, 768: 8));
+  /* -- Headline -- */
+  .headline {
+    display: flex;
+    flex-direction: column;
+    @include dynamic-sizes(gap, 8, (1024: 8, 768: 8));
+  }
 }
 
 /* -- Search bar -- */
