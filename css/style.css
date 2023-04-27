@@ -661,19 +661,21 @@ a {
 
   .activities-cards .card {
     /* La largeur de la maquette est utilisée. Celle des composants étant différente. */
-    aspect-ratio: 315/121;
+    aspect-ratio: 315/200;
     width: calc(100 / 375 * 315vw);
+    max-height: calc(100 / 375 * 200vw);
   }
 
   .activities-cards img {
     /* La largeur de la maquette est utilisée. Celle des composants étant différente. */
     width: calc(100 / 375 * 315vw);
-    height: calc(100 / 375 * 121vw);
+    height: calc(100 / 375 * 141vw);
   }
 
   .activities-cards h3 {
     margin: 0;
     padding: var(--16px) var(--19px);
+    height: calc(100 / 375 * 59vw);
   }
 
   .footer {  padding-block: 30px; }
