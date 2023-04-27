@@ -295,56 +295,6 @@ a {
 
 @import "partials/information";
 
-/* -- Search filters -- */
-
-.search-filters {
-  height: fit-content;
-  display: flex;
-  flex-direction: var(--search-filters-direction);
-  align-items: var(--search-filters-alignment);
-  gap: var(--search-filters-gap);
-}
-
-.search-filters .filters-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--search-filters-buttons-gap);
-}
-
-.filters-buttons .filter-button {
-  font-size: var(--regular-font-size);
-  height: var(--search-filter-button-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--icon-bg-color);
-  border-radius: var(--search-filter-button-border-radius);
-  font-weight: 700;
-  gap: var(--search-filter-button-gap);
-  padding: var(--search-filter-button-padding);
-}
-
-@media (max-width: 768px) {
-  .filters-buttons .filter-button { flex: 1; }
-}
-
-.filter-button:hover { background-color: var(--filter-bg-color); }
-
-/* -- Information text -- */
-/* La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
-
-.information-text {
-  display: flex;
-  align-items: center;
-  gap: var(--information-text-gap);
-}
-
-.information-text i {
-  border: 1px solid var(--icon-bg-color);
-  padding: 10px;
-  border-radius: 50%;
-}
-
 /* -- GENERAL: TITLES AND CARDS -- */
 
 .section-title {
