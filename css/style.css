@@ -34,7 +34,7 @@ body { line-height: 1; }
     Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 1440px, puis on multiplie par le nombre de pixels souhaité.
     Les valeurs utilisées sont celles fournies dans les maquettes.
   */
-  --main-gap: min(calc(100 / 1440 * 35vw), 35px);
+  --content-gap: min(calc(100 / 1440 * 35vw), 35px);
   --section-title-font-size: min(calc(100 / 1440 * 22vw), 22px);
   --card-title-font-size: min(calc(100 / 1440 * 16vw), 16px);
   --card-subtitle-font-size: min(calc(100 / 1440 * 14vw), 14px);
@@ -84,7 +84,7 @@ body { line-height: 1; }
       Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 1024, puis on multiplie par le nombre de pixels souhaité.
       Les valeurs utilisées sont celles fournies dans les maquettes.
     */
-    --main-gap: calc(100 / 1024 * 35vw);
+    --content-gap: calc(100 / 1024 * 35vw);
     --section-title-font-size: calc(100 / 1024 * 22vw);
     --card-title-font-size: calc(100 / 1024 * 16vw);
     --card-subtitle-font-size: calc(100 / 1024 * 14vw);
@@ -135,7 +135,7 @@ body { line-height: 1; }
       Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 375, puis on multiplie par le nombre de pixels souhaité.
       Les valeurs utilisées sont celles fournies dans les maquettes.
     */
-    --main-gap: calc(100 / 375 * 35vw);
+    --content-gap: calc(100 / 375 * 35vw);
     --section-title-font-size: calc(100 / 375 * 22vw);
     --card-title-font-size: calc(100 / 375 * 16vw);
     --card-subtitle-font-size: calc(100 / 375 * 14vw);
