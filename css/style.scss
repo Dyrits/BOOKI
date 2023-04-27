@@ -1,5 +1,5 @@
-@charset "UTF-8";
 /* -- RESET -- */
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -8,15 +8,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 
-body {
-  line-height: 1;
-}
+body { line-height: 1; }
 
 /* -- GENERAL -- */
+
 * {
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
@@ -27,6 +24,7 @@ body {
   --main-bg-color: #F2F2F2;
   --icon-bg-color: #D9D9D9;
   --filter-bg-color: #DEEBFF;
+
   /* Commonly used dynamic variables based on the 1440px mockup. */
   --10px: min(calc(100 / 1440 * 10vw), 10px);
   --15px: min(calc(100 / 1440 * 15vw), 15px);
@@ -35,17 +33,22 @@ body {
   --19px: min(calc(100 / 1440 * 19vw), 19px);
   --20px: min(calc(100 / 1440 * 20vw), 20px);
   --30px: min(calc(100 / 1440 * 30vw), 30px);
+
   /* Dynamic variables for screens larger than 1024px based on the 1440px mockup. */
+
   /* Font-sizes */
   --small-font-size: min(calc(100 / 1440 * 14vw), 14px);
   --regular-font-size: var(--16px);
   --large-font-size: var(--18px);
   --extra-large-font-size: min(calc(100 / 1440 * 22vw), 22px);
+
   /* Main container */
   --main-container-padding-inline: min(calc(100 / 1440 * 50vw), 50px);
+
   /* Content */
   --content-margin-block: var(--30px);
   --content-gap: min(calc(100 / 1440 * 35vw), 35px);
+
   /* Information section */
   --information-section-padding-inline: 0;
   --information-section-gap: var(--30px);
@@ -75,6 +78,7 @@ body {
   --search-filter-button-border-radius: min(calc(100 / 1440 * 25vw), 25px);
   /* Information text */
   --information-text-gap: var(--10px);
+
   /* Cards */
   --card-border-radius: var(--20px);
   --card-image-border-radius-top: var(--20px) var(--20px) 0 0;
@@ -98,6 +102,7 @@ body {
   --activities-card-image-height: min(calc(100 / 1440 * 380vw), 380px);
   --activities-card-content-height: min(calc(100 / 1440 * 59vw), 59px);
   --activities-card-content-padding-inline: var(--19px);
+
   /* Accommodations section */
   --accommodations-section-direction: row;
   --accommodations-section-gap: min(calc(100 / 1440 * 40vw), 40px);
@@ -111,15 +116,18 @@ body {
   /* Accommodations card-box */
   --accommodations-cards-direction: row;
   --accommodations-cards-gap: var(--30px);
+
   --populars-width: min(calc(100 / 1440 * 429vw), 429px);
   --populars-gap: var(--30px);
   --populars-padding: var(--30px);
   --populars-border-radius: var(--15px);
+
   --populars-cards-gap: var(--30px);
   --populars-cards-direction: column;
   --activities-width: 100%;
   --activities-gap: var(--30px);
   --activities-padding: var(--30px);
+
   --activities-cards-gap: var(--30px);
   --activities-cards-direction: row;
 }
@@ -177,6 +185,7 @@ body {
     --activities-cards-direction: row;
   }
 }
+
 @media (max-width: 768px) {
   :root {
     /* Tailles dynamiques les plus utilisées. */
@@ -216,7 +225,7 @@ body {
     --accommodations-cards-gap: var(--15px);
     --accommodations-cards-direction: column;
     --populars-gap: var(--15px);
-    --populars-padding: var(--30px) var(--20px);
+    --populars-padding: var(--30px) var(--20px);;
     --populars-card-width: calc(100 / 375 * 335vw);
     --populars-card-height: calc(100 / 375 * 146vw);
     --populars-card-image-width: calc(100 / 375 * 112vw);
@@ -232,18 +241,17 @@ body {
     --activities-cards-direction: column;
   }
 }
-.fa-solid {
-  color: var(--main-color);
-}
+
+.fa-solid { color: var(--main-color); }
+
+
 
 body {
   display: flex;
   justify-content: center;
 }
 
-p, span, i {
-  font-size: var(--regular-font-size);
-}
+p, span, i { font-size: var(--regular-font-size); }
 
 .main-container {
   width: 100%;
@@ -265,20 +273,16 @@ a {
   color: black;
 }
 
-.text-large, .text-extra-large {
-  font-weight: 700;
-}
+.text-large, .text-extra-large { font-weight: 700; }
 
-.text-large {
-  font-size: var(--large-font-size);
-}
+.text-large { font-size: var(--large-font-size); }
 
-.text-extra-large {
-  font-size: var(--extra-large-font-size);
-}
+.text-extra-large { font-size: var(--extra-large-font-size); }
 
 /* -- HEADER -- */
+
 /* Header : La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
+
 .header-nav {
   display: flex;
   justify-content: space-between;
@@ -301,122 +305,10 @@ a {
   border-top: 2px solid var(--main-color);
 }
 
-/* -- INFORMATION SECTION -- */
-.information-section {
-  display: flex;
-  flex-direction: column;
-  gap: calc(100 / 30 * 1440vw);
-  padding-inline: calc(100 / 0 * 1440vw);
-}
-@media (max-width: 1024px) {
-  .information-section {
-    gap: calc(100 / 1024 * 30vw);
-  }
-}
-@media (max-width: 768px) {
-  .information-section {
-    gap: calc(100 / 375 * 35vw);
-  }
-}
-@media (max-width: 1024px) {
-  .information-section {
-    padding-inline: calc(100 / 1024 * 0vw);
-  }
-}
-@media (max-width: 768px) {
-  .information-section {
-    padding-inline: calc(100 / 375 * 20vw);
-  }
-}
+@import "partials/information";
 
-/* -- Headline -- */
-/* La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
-.headline {
-  display: flex;
-  flex-direction: column;
-  gap: calc(100 / 8 * 1440vw);
-}
-@media (max-width: 1024px) {
-  .headline {
-    gap: calc(100 / 1024 * 8vw);
-  }
-}
-@media (max-width: 768px) {
-  .headline {
-    gap: calc(100 / 375 * 8vw);
-  }
-}
-
-/* -- Search bar -- */
-/* La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
-.search-bar form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: var(--search-bar-width);
-  height: var(--search-bar-height);
-}
-
-.search-bar .search-icon {
-  font-size: var(--regular-font-size);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: var(--search-bar-icon-size);
-  min-width: var(--search-bar-icon-size);
-  background-color: var(--icon-bg-color);
-  color: black;
-  border-radius: var(--search-bar-icon-border-radius);
-}
-
-.search-bar .search-input {
-  flex: 1;
-  height: 100%;
-  border: 1px solid var(--icon-bg-color);
-  outline: none;
-  border-right: 0;
-  padding-left: var(--search-bar-input-padding-left);
-}
-
-.search-bar .search-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: inherit;
-  width: var(--search-bar-button-width);
-  background-color: var(--main-color);
-  color: white;
-  border: 0.5px solid var(--main-color);
-  border-radius: var(--search-bar-button-border-radius);
-}
-
-/* Le bouton est caché pour les écrans de taille inférieure à 768px. */
-.search-bar .mobile-search-button {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  height: inherit;
-  width: var(--search-bar-icon-size);
-  background-color: var(--main-color);
-  color: white;
-  border: 0.5px solid var(--main-color);
-  border-radius: var(--search-bar-icon-mobile-border-radius);
-  margin-left: -15px;
-}
-
-.search-bar .mobile-search-button i {
-  color: #FFF;
-}
-
-@media (max-width: 768px) {
-  .search-bar .search-button {
-    display: none;
-  }
-  .search-bar .mobile-search-button {
-    display: flex;
-  }
-}
 /* -- Search filters -- */
+
 .search-filters {
   height: fit-content;
   display: flex;
@@ -445,16 +337,14 @@ a {
 }
 
 @media (max-width: 768px) {
-  .filters-buttons .filter-button {
-    flex: 1;
-  }
+  .filters-buttons .filter-button { flex: 1; }
 }
-.filter-button:hover {
-  background-color: var(--filter-bg-color);
-}
+
+.filter-button:hover { background-color: var(--filter-bg-color); }
 
 /* -- Information text -- */
 /* La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
+
 .information-text {
   display: flex;
   align-items: center;
@@ -468,6 +358,7 @@ a {
 }
 
 /* -- GENERAL: TITLES AND CARDS -- */
+
 .section-title {
   /* La taille du titre des sections ne changent pas d'un support à l'autre mais peut causer des légers problèmes lors du redimensionnement. */
   font-size: var(--section-title-font-size);
@@ -480,58 +371,43 @@ a {
   filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
-.card img {
-  object-fit: cover;
-}
+.card img { object-fit: cover; }
 
 /*
   La taille du contenu textuel des cartes ne changent pas d'un support à l'autre mais peut causer des problèmes de débordement lors du redimensionnement.
   Une taille dynamique est utilisée.
 */
-.card-title {
-  font-size: var(--card-title-font-size);
-}
 
-.card-subtitle {
-  font-size: var(--card-subtitle-font-size);
-}
+.card-title { font-size: var(--card-title-font-size); }
 
-.card-rating {
-  font-size: var(--16px);
-}
+.card-subtitle { font-size: var(--card-subtitle-font-size); }
 
-.euro {
-  font-weight: 700;
-}
+.card-rating { font-size: var(--16px); }
 
-.neutral-star {
-  color: var(--main-bg-color);
-}
+.euro { font-weight: 700; }
+
+.neutral-star { color: var(--main-bg-color); }
 
 /* -- ACCOMMODATIONS SECTION -- */
 /*
   La taille des éléments a besoin d'être dynamique pour garder un ratio correct sur chaque taille d'écran intermédiaire.
   Les variables dynamiques sont utilisées.
  */
+
 #accommodations-section {
   display: flex;
   flex-direction: var(--accommodations-section-direction);
   gap: var(--accommodations-gap);
 }
 
-#accommodations-section > article {
-  background-color: var(--main-bg-color);
-}
+#accommodations-section > article { background-color: var(--main-bg-color); }
 
-#accommodations-section img {
-  padding: var(--accommodations-section-card-image-padding);
-}
+#accommodations-section img { padding: var(--accommodations-section-card-image-padding); }
 
-#accommodations-section .card-content {
-  padding: var(--accommodations-section-card-content-padding);
-}
+#accommodations-section .card-content { padding: var(--accommodations-section-card-content-padding); }
 
 /* -- Accommodations -- */
+
 /* Après calcul, la taille du bloc des hébergements correspond à 65% de la largeur disponible. */
 .accommodations {
   width: var(--accommodations-width);
@@ -573,6 +449,7 @@ a {
 }
 
 /* -- Populars -- */
+
 /* Après calcul, la taille du bloc des hébergements populaires correspond à 32% de la largeur disponible. */
 .populars {
   display: flex;
@@ -616,6 +493,7 @@ a {
 
 /* -- ACTIVITIES SECTION -- */
 /* La taille des éléments a besoin d'être dynamique pour garder un ratio correct sur chaque taille d'écran intermédiaire. */
+
 .activities {
   width: var(--activities-width);
   display: flex;
@@ -636,12 +514,11 @@ a {
   max-height: var(--activities-card-height);
 }
 
-.activities-cards img {
-  height: var(--activities-card-image-height);
-}
+.activities-cards img { height: var(--activities-card-image-height); }
 
 /* -- FOOOTER -- */
 /* La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
+
 .footer {
   padding-block: 20px;
   background-color: #F2F2F2;
@@ -672,5 +549,3 @@ a {
   font-size: 16px;
   margin: 0;
 }
-
-/*# sourceMappingURL=style.css.map */

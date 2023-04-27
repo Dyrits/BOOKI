@@ -1,0 +1,26 @@
+// _mixins.scss
+
+@function dynamic-size($screen-size, $value) {
+  $screen-size: $screen-size;
+  @if $screen-size == 768 { $screen-size: 375; }
+  @if $screen-size == 1440 { @return min(calc(100 / #{ $screen-size } * #{ $value }vw), #{ $value }px); }
+  @else { @return calc(100 / #{ $screen-size } * #{ $value }vw); }
+}
+
+@mixin dynamic-sizes($property, $default-value, $screen-sizes) {
+  #{ $property }: #{ dynamic-size($default-value, 1440) };
+  @each $screen-size, $value in $screen-sizes {
+    @media (max-width: "#{ $screen-size }px") {
+      #{ $property }: #{ dynamic-size($screen-size, $value) };
+    }
+  }
+}
+
+@mixin dynamic-values($property, $default-value, $screen-sizes) {
+  #{ $property }: #{ $default-value };
+  @each $screen-size, $value in $screen-sizes {
+    @media (max-width: "#{ $screen-size }px") {
+      #{ $property }: #{ $value };
+    }
+  }
+}

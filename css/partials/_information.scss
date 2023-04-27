@@ -1,0 +1,85 @@
+@import "mixins";
+
+/* -- INFORMATION SECTION -- */
+
+.information-section {
+  display: flex;
+  flex-direction: column;
+  @include dynamic-sizes(gap, 30, (1024: 30, 768: 35));
+  @include dynamic-sizes(padding-inline, 0, (1024: 0, 768: 20));
+}
+
+/* -- Headline -- */
+/* La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  @include dynamic-sizes(gap, 8, (1024: 8, 768: 8));
+}
+
+/* -- Search bar -- */
+/* La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
+
+.search-bar form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: var(--search-bar-width);
+  height: var(--search-bar-height);
+}
+
+.search-bar .search-icon {
+  font-size: var(--regular-font-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--search-bar-icon-size);
+  min-width: var(--search-bar-icon-size);
+  background-color: var(--icon-bg-color);
+  color: black;
+  border-radius: var(--search-bar-icon-border-radius);
+}
+
+.search-bar .search-input {
+  flex: 1;
+  height: 100%;
+  border: 1px solid var(--icon-bg-color);
+  outline: none;
+  border-right: 0;
+  padding-left: var(--search-bar-input-padding-left);
+}
+
+.search-bar .search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: var(--search-bar-button-width);
+  background-color: var(--main-color);
+  color: white;
+  border: 0.5px solid var(--main-color);
+  border-radius: var(--search-bar-button-border-radius);
+}
+
+/* Le bouton est caché pour les écrans de taille inférieure à 768px. */
+.search-bar .mobile-search-button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: var(--search-bar-icon-size);
+  background-color: var(--main-color);
+  color: white;
+  border: 0.5px solid var(--main-color);
+  border-radius: var(--search-bar-icon-mobile-border-radius);
+  margin-left: -15px;
+}
+
+.search-bar .mobile-search-button i { color: #FFF; }
+
+@media (max-width: 768px) {
+.search-bar .search-button { display: none; }
+
+.search-bar .mobile-search-button { display: flex; }
+}
