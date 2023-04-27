@@ -1,25 +1,25 @@
 // _mixins.scss
 
-@function dynamic-size($screen-size, $value) {
-  $screen-size: $screen-size;
-  @if $screen-size == 768 { $screen-size: 375; }
-  @if $screen-size == 1440 { @return min(calc(100 / #{ $screen-size } * #{ $value }vw), #{ $value }px); }
-  @else { @return calc(100 / #{ $screen-size } * #{ $value }vw); }
+@function dynamic-size($viewport, $size) {
+  $viewport: $viewport;
+  @if $viewport == 768 { $viewport: 375; }
+  @if $viewport == 1440 { @return min(calc(100 / #{ $viewport } * #{ $size }vw), #{ $size }px); }
+  @else { @return calc(100 / #{ $viewport } * #{ $size }vw); }
 }
 
-@mixin dynamic-sizes($property, $default-value, $screen-sizes) {
-  #{ $property }: #{ dynamic-size($default-value, 1440) };
-  @each $screen-size, $value in $screen-sizes {
-    @media (max-width: "#{ $screen-size }px") {
-      #{ $property }: #{ dynamic-size($screen-size, $value) };
+@mixin dynamic-sizes($property, $default-size, $viewport-sizes, $breakpoint-type: max-width) {
+  #{ $property }: #{ dynamic-size($default-size, 1440) };
+  @each $viewport, $size in $viewport-sizes {
+    @media ($breakpoint-type: "#{ $viewport }px") {
+      #{ $property }: #{ dynamic-size($viewport, $size) };
     }
   }
 }
 
-@mixin dynamic-values($property, $default-value, $screen-sizes) {
+@mixin dynamic-values($property, $default-value, $viewport-values, $breakpoint-type: max-width) {
   #{ $property }: #{ $default-value };
-  @each $screen-size, $value in $screen-sizes {
-    @media (max-width: "#{ $screen-size }px") {
+  @each $viewport, $value in $viewport-values {
+    @media ($breakpoint-type: "#{ $viewport }px") {
       #{ $property }: #{ $value };
     }
   }
