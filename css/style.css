@@ -31,18 +31,17 @@ body { line-height: 1; }
   /* Tailles dynamiques les plus utilisées. */
   --15px: min(calc(100 / 1440 * 15vw), 15px);
   --16px: min(calc(100 / 1440 * 16vw), 16px);
+  --18px: min(calc(100 / 1440 * 18vw), 18px);
+  --19px: min(calc(100 / 1440 * 19vw), 19px);
   --20px: min(calc(100 / 1440 * 20vw), 20px);
   --30px: min(calc(100 / 1440 * 30vw), 30px);
 
-  /*
-    Ajout de variables pour des tailles dynamiques de 1024px à 1440px, avec valeur maximum.
-    Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 1440px).
-    Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 1440px, puis on multiplie par le nombre de pixels souhaité.
-    Les valeurs utilisées sont celles fournies dans les maquettes.
-  */
+  /* Variables dynamiques pour les écrans de taille supérieur à 1024px sur la base de la maquette à 1440px. */
+  --large-font-size: var(--18px);
   --content-gap: min(calc(100 / 1440 * 35vw), 35px);
   --card-border-radius: var(--20px);
   --section-title-font-size: min(calc(100 / 1440 * 22vw), 22px);
+  --section-subtitle-font-size: var(--19px);
   --card-title-font-size: var(--16px);
   --card-subtitle-font-size: min(calc(100 / 1440 * 14vw), 14px);
   --card-rating-font-size: var(--16px);
@@ -77,117 +76,88 @@ body { line-height: 1; }
   --activities-card-height: min(calc(100 / 1440 * 439vw), 439px);
   --activities-card-image-height: min(calc(100 / 1440 * 380vw), 380px);
   --activities-card-content-height: min(calc(100 / 1440 * 59vw), 59px);
-  --activities-card-content-padding-inline: min(calc(100 / 1440 * 19vw), 19px);
+  --activities-card-content-padding-inline: var(--19px);
   --activities-cards-gap: var(--30px);
   --activities-cards-direction: row;
 }
 
 @media (max-width: 1024px) {
   :root {
+    /* Tailles dynamiques les plus utilisées. */
     --15px: calc(100 / 1024 * 15vw);
     --16px: calc(100 / 1024 * 16vw);
+    --18px: calc(100 / 1024 * 18vw);
+    --19px: calc(100 / 1024 * 19vw);
     --20px: calc(100 / 1024 * 20vw);
     --30px: calc(100 / 1024 * 30vw);
-
-    /*
-      Modification des variables pour des tailles dynamiques de 768px à 1024px.
-      Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 1024px).
-      Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 1024, puis on multiplie par le nombre de pixels souhaité.
-      Les valeurs utilisées sont celles fournies dans les maquettes.
-    */
+    /* Variables dynamiques pour les écrans entre 768px et 1024px sur la base de la maquette à 1024px. */
     --content-gap: calc(100 / 1024 * 35vw);
-    /* --card-border-radius: var(--20px); */
     --section-title-font-size: calc(100 / 1024 * 22vw);
-    /* --card-title-font-size: var(--16px); */
     --card-subtitle-font-size: calc(100 / 1024 * 14vw);
-    /* --card-rating-font-size: var(--16px); */
     --accommodations-section-direction: column;
     --accomodations-section-gap: calc(100 / 1024 * 40vw);
     --accomodations-section-card-image-padding: calc(100 / 1024 * 5vw);
     --accomodations-width: 100%;
-    /* --accomodations-gap: var(--30px); */
-    /* --accomodations-padding: var(--30px); */
     --accomodations-card-width: calc(100 / 1024 * 268vw);
     --accomodations-card-height: calc(100 / 1024 * 207vw);
     --accomodations-card-image-height: calc(100 / 1024 * 124vw);
     --accomodations-card-content-height: calc(100 / 1024 * 79vw);
-    /* --accomodations-card-content-padding: var(--15px); */
-    /* --accomodations-cards-gap: var(--30px); */
     --accomodations-cards-direction: row;
     --show-more-title-font-size: calc(100 / 1024 * 18vw);
     --populars-width: 100%;
     --populars-gap:  var(--20px);
-    /* --populars-padding: var(--30px); */
     --populars-card-width: calc(100 / 1024 * 275vw);
     --populars-card-height: calc(100 / 1024 * 146vw);
     --populars-card-image-width: calc(100 / 1024 * 92vw);
     --populars-card-content-width: calc(100 / 1024 * 183w);
-    /* --populars-card-content-padding: var(--15px); */
     --populars-cards-gap: var(--20px);
     --populars-cards-direction: row;
     --activities-width: 100%;
-    /* --activities-gap: var(--30px); */
-    /* --activities-padding: var(--30px); */
     --activities-card-width: calc(100 / 1024 * 193.5vw);
     --activities-card-height: calc(100 / 1024 * 270vw);
     --activities-card-image-height: calc(100 / 1024 * 200vw);
     --activities-card-content-height: calc(100 / 1024 * 70vw);
-    --activities-card-content-padding-inline: calc(100 / 1024 * 19vw);
-    /* --activities-cards-gap: var(--30px); */
     --activities-cards-direction: row;
   }
 }
 
 @media (max-width: 768px) {
   :root {
+    /* Tailles dynamiques les plus utilisées. */
     --15px: calc(100 / 375 * 15vw);
     --16px: calc(100 / 375 * 16vw);
+    --18px: calc(100 / 375 * 18vw);
+    --19px: calc(100 / 375 * 19vw);
     --20px: calc(100 / 375 * 20vw);
     --30px: calc(100 / 375 * 30vw);
-    /*
-      Modification des variables pour des tailles dynamiques de 320px à 768px.
-      Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 375px).
-      Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 375, puis on multiplie par le nombre de pixels souhaité.
-      Les valeurs utilisées sont celles fournies dans les maquettes.
-    */
+    /* Variables dynamiques pour les écrans entre 320px et 768px sur la base de la maquette à 375px. */
     --content-gap: calc(100 / 375 * 35vw);
-    /* --card-border-radius: var(--20px); */
     --section-title-font-size: calc(100 / 375 * 22vw);
-    /* --card-title-font-size: var(--16px); */
     --card-subtitle-font-size: calc(100 / 375 * 14vw);
-    /* --card-rating-font-size: var(--16px); */
-    /* --accommodations-section-direction: column; */
     --accomodations-section-gap: var(--15px);
     --accomodations-section-card-image-padding: calc(100 / 375 * 5vw);
-    /* --accomodations-width: 100%; */
     --accomodations-gap: var(--15px);
     --accomodations-padding: var(--20px);
     --accomodations-card-width: calc(100 / 375 * 335vw);
     --accomodations-card-height: calc(100 / 375 * 207vw);
     --accomodations-card-image-height: calc(100 / 375 * 124vw);
     --accomodations-card-content-height: calc(100 / 375 * 83vw);
-    /* --accomodations-card-content-padding: var(--15px); */
     --accomodations-cards-gap: var(--15px);
     --accomodations-cards-direction: column;
     --show-more-title-font-size: calc(100 / 375 * 18vw);
-    /* --populars-width: 100%; */
     --populars-gap: var(--15px);
     --populars-padding:  var(--30px) var(--20px);;
     --populars-card-width: calc(100 / 375 * 335vw);
     --populars-card-height: calc(100 / 375 * 146vw);
     --populars-card-image-width: calc(100 / 375 * 112vw);
     --populars-card-content-width: calc(100 / 375 * 223w);
-    /* --populars-card-content-padding: var(--15px); */
     --populars-cards-gap: var(--15px);
     --populars-cards-direction: column;
-    /* --activities-width: 100%; */
     --activities-gap: var(--20px);
-    /* --activities-padding: var(--30px); */
     --activities-card-width: calc(100 / 375 * 315vw);
     --activities-card-height: calc(100 / 375 * 200vw);
     --activities-card-image-height: calc(100 / 375 * 141vw);
     --activities-card-content-height: calc(100 / 375 * 59vw);
-    --activities-card-content-padding-inline: calc(100 / 375 * 19vw);
     --activities-cards-gap: var(--15px);
     --activities-cards-direction: column;
   }
@@ -266,7 +236,7 @@ a {
   gap: 35px;
 }
 
-.search-form {
+.search-bar form {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -275,7 +245,7 @@ a {
   height: 49px;
 }
 
-.search-form .search-icon {
+.search-bar .search-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,7 +256,7 @@ a {
   border-radius: 10px 0 0 10px;
 }
 
-.search-form .search-input {
+.search-bar .search-input {
   flex: 1;
   height: 100%;
   border: 0.5px solid var(--icon-bg-color);
@@ -294,7 +264,7 @@ a {
   border-right: 0;
 }
 
-.search-form .search-button {
+.search-bar .search-button {
   height: 100%;
   width: 132px;
   background-color: var(--main-color);
@@ -307,7 +277,7 @@ a {
 }
 
 /* Le bouton est caché pour les écrans de taille inférieure à 768px. */
-.search-form .mobile-search-button { display: none; }
+.search-bar .mobile-search-button { display: none; }
 
 /* -- Search filters -- */
 
