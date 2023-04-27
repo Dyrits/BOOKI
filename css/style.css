@@ -16,59 +16,151 @@
     Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 1440px, puis on multiplie par le nombre de pixels souhaité.
     Les valeurs utilisées sont celles fournies dans les maquettes.
   */
-  --4px: min(calc(100 / 1440 * 4vw), 4px);
-  --5px: min(calc(100 / 1440 * 5vw), 5px);
-  --15px: min(calc(100 / 1440 * 15vw), 15px);
-  --16px: min(calc(100 / 1440 * 16vw), 16px);
-  --18px: min(calc(100 / 1440 * 18vw), 18px);
-  --19px: min(calc(100 / 1440 * 19vw), 19px);
-  --20px: min(calc(100 / 1440 * 20vw), 20px);
-  --22px: min(calc(100 / 1440 * 22vw), 22px);
-  --30px: min(calc(100 / 1440 * 30vw), 30px);
-  --40px: min(calc(100 / 1440 * 40vw), 40px);
-  --50px: min(calc(100 / 1440 * 50vw), 50px);
-  --60px: min(calc(100 / 1440 * 60vw), 60px);
-  --83px: min(calc(100 / 1440 * 83vw), 83px);
-  --123px: min(calc(100 / 1440 * 123vw), 123px);
-  --124px: min(calc(100 / 1440 * 124vw), 124px);
-  --146px: min(calc(100 / 1440 * 146vw), 146px);
-  --207px: min(calc(100 / 1440 * 207vw), 207px);
-  --210px: min(calc(100 / 1440 * 210vw), 210px);
-  --243px: min(calc(100 / 1440 * 243vw), 243px);
-  --246px: min(calc(100 / 1440 * 246vw), 246px);
-  --297px: min(calc(100 / 1440 * 297vw), 297px);
-  --369px: min(calc(100 / 1440 * 369vw), 369px);
-  --380px: min(calc(100 / 1440 * 380vw), 380px);
-  --439px: min(calc(100 / 1440 * 439vw), 439px);
 
-
+  --main-gap: min(calc(100 / 1440 * 35vw), 35px);
   --section-title-font-size: min(calc(100 / 1440 * 22vw), 22px);
   --card-title-font-size: min(calc(100 / 1440 * 16vw), 16px);
   --card-subtitle-font-size: min(calc(100 / 1440 * 14vw), 14px);
   --card-rating-font-size: min(calc(100 / 1440 * 16vw), 16px);
+  --accommodations-group-direction: row;
   --accomodations-group-gap: min(calc(100 / 1440 * 40vw), 40px);
   --accomodations-width: min(calc(100 / 1440 * 871vw), 871px);
   --accomodations-gap: min(calc(100 / 1440 * 30vw), 30px);
   --accomodations-padding: min(calc(100 / 1440 * 30vw), 30px);
   --accomodations-card-width: min(calc(100 / 1440 * 250vw), 250px);
   --accomodations-card-height: min(calc(100 / 1440 * 207vw), 207px);
+  --accomodations-card-image-height: min(calc(100 / 1440 * 124vw), 124px);
+  --accomodations-card-image-padding: min(calc(100 / 1440 * 5vw), 5px);
+  --accomodations-card-content-height: min(calc(100 / 1440 * 79vw), 79px);
+  --accomodations-card-content-padding: min(calc(100 / 1440 * 15vw), 15px);
   --accomodations-cards-gap: min(calc(100 / 1440 * 30vw), 30px);
-  --accomodations-card-direction: row;
+  --accomodations-cards-direction: row;
   --show-more-title-font-size: min(calc(100 / 1440 * 18vw), 18px);
   --populars-width: min(calc(100 / 1440 * 429vw), 429px);
   --populars-gap: min(calc(100 / 1440 * 30vw), 30px);
   --populars-padding: min(calc(100 / 1440 * 30vw), 30px);
   --populars-card-width: min(calc(100 / 1440 * 369vw), 369px);
   --populars-card-height: min(calc(100 / 1440 * 144vw), 144px);
+  --populars-card-image-width: min(calc(100 / 1440 * 144vw), 144px);
+  --populars-card-image-padding: min(calc(100 / 1440 * 5vw), 5px);
+  --populars-card-content-width: min(calc(100 / 1440 * 246vw), 246px);
+  --populars-card-content-padding: min(calc(100 / 1440 * 15vw), 15px);
   --populars-cards-gap: min(calc(100 / 1440 * 30vw), 30px);
-  --populars-card-direction: column;
+  --populars-cards-direction: column;
   --activities-width: 100%;
   --activities-gap: min(calc(100 / 1440 * 30vw), 30px);
   --activities-padding: min(calc(100 / 1440 * 30vw), 30px);
   --activities-card-width: min(calc(100 / 1440 * 297.5vw), 297.5px);
   --activities-card-height: min(calc(100 / 1440 * 439vw), 439px);
+  --activities-card-image-height: min(calc(100 / 1440 * 380vw), 380px);
+  --activities-card-content-height: min(calc(100 / 1440 * 59vw), 59px);
+  --activities-card-content-padding-inline: min(calc(100 / 1440 * 19vw), 19px);
   --activities-cards-gap: min(calc(100 / 1440 * 30vw), 30px);
-  --activities-card-direction: row;
+  --activities-cards-direction: row;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    /*
+      Ajout de variables pour des tailles dynamiques de 768px à 1024px.
+      Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 1024px).
+      Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 1024, puis on multiplie par le nombre de pixels souhaité.
+      Les valeurs utilisées sont celles fournies dans les maquettes.
+    */
+
+    --main-gap: calc(100 / 1024 * 35vw);
+    --section-title-font-size: calc(100 / 1024 * 22vw);
+    --card-title-font-size: calc(100 / 1024 * 16vw);
+    --card-subtitle-font-size: calc(100 / 1024 * 14vw);
+    --card-rating-font-size: calc(100 / 1024 * 16vw);
+    --accommodations-group-direction: column;
+    --accomodations-group-gap: calc(100 / 1024 * 40vw);
+    --accomodations-width: 100%;
+    --accomodations-gap: calc(100 / 1024 * 30vw);
+    --accomodations-padding: calc(100 / 1024 * 30vw);
+    --accomodations-card-width: calc(100 / 1024 * 268vw);
+    --accomodations-card-height: calc(100 / 1024 * 207vw);
+    --accomodations-card-image-height: calc(100 / 1024 * 124vw);
+    --accomodations-card-image-padding: calc(100 / 1024 * 5vw);
+    --accomodations-card-content-height: calc(100 / 1024 * 79vw);
+    --accomodations-card-content-padding: calc(100 / 1024 * 15vw);
+    --accomodations-cards-gap: calc(100 / 1024 * 30vw);
+    --accomodations-cards-direction: row;
+    --show-more-title-font-size: calc(100 / 1024 * 18vw);
+    --populars-width: 100%;
+    --populars-gap: calc(100 / 1024 * 20vw);
+    --populars-padding: calc(100 / 1024 * 30vw);
+    --populars-card-width: calc(100 / 1024 * 275vw);
+    --populars-card-height: calc(100 / 1024 * 146vw);
+    --populars-card-image-width: calc(100 / 1024 * 92vw);
+    --populars-card-image-padding: calc(100 / 1024 * 5vw);
+    --populars-card-content-width: calc(100 / 1024 * 183w);
+    --populars-card-content-padding: calc(100 / 1024 * 15vw);
+    --populars-cards-gap: calc(100 / 1024 * 20vw);
+    --populars-cards-direction: row;
+    --activities-width: 100%;
+    --activities-gap: calc(100 / 1024 * 30vw);
+    --activities-padding: calc(100 / 1024 * 30vw);
+    --activities-card-width: calc(100 / 1024 * 193.5vw);
+    --activities-card-height: calc(100 / 1024 * 270vw);
+    --activities-card-image-height: calc(100 / 1024 * 200vw);
+    --activities-card-content-height: calc(100 / 1024 * 70vw);
+    --activities-card-content-padding-inline: calc(100 / 1024 * 19vw);
+    --activities-cards-gap: calc(100 / 1024 * 30vw);
+    --activities-cards-direction: row;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    /*
+      Ajout de variables pour des tailles dynamiques de 320px à 768px.
+      Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 375px).
+      Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 375, puis on multiplie par le nombre de pixels souhaité.
+      Les valeurs utilisées sont celles fournies dans les maquettes.
+    */
+
+    --main-gap: calc(100 / 375 * 35vw);
+    --section-title-font-size: calc(100 / 375 * 22vw);
+    --card-title-font-size: calc(100 / 375 * 16vw);
+    --card-subtitle-font-size: calc(100 / 375 * 14vw);
+    --card-rating-font-size: calc(100 / 375 * 16vw);
+    /* --accommodations-group-direction: column; */
+    --accomodations-group-gap: calc(100 / 375 * 15vw);
+    /* --accomodations-width: 100%; */
+    --accomodations-gap: calc(100 / 375 * 15vw);
+    --accomodations-padding: calc(100 / 375 * 20vw);
+    --accomodations-card-width: calc(100 / 375 * 335vw);
+    --accomodations-card-height: calc(100 / 375 * 207vw);
+    --accomodations-card-image-height: calc(100 / 375 * 124vw);
+    --accomodations-card-image-padding: calc(100 / 375 * 5vw);
+    --accomodations-card-content-height: calc(100 / 375 * 83vw);
+    --accomodations-card-content-padding: calc(100 / 375 * 15vw);
+    --accomodations-cards-gap: calc(100 / 375 * 15vw);
+    --accomodations-cards-direction: column;
+    --show-more-title-font-size: calc(100 / 375 * 18vw);
+    /* --populars-width: 100%; */
+    --populars-gap: calc(100 / 375 * 15vw);
+    --populars-padding: calc(100 / 375 * 30vw) calc(100 / 375 * 20vw);
+    --populars-card-width: calc(100 / 375 * 335vw);
+    --populars-card-height: calc(100 / 375 * 146vw);
+    --populars-card-image-width: calc(100 / 375 * 112vw);
+    --populars-card-image-padding: calc(100 / 375 * 5vw);
+    --populars-card-content-width: calc(100 / 375 * 223w);
+    --populars-card-content-padding: calc(100 / 375 * 15vw);
+    --populars-cards-gap: calc(100 / 375 * 15vw);
+    --populars-cards-direction: column;
+    /* --activities-width: 100%; */
+    --activities-gap: calc(100 / 375 * 30vw);
+    --activities-padding: calc(100 / 375 * 30vw);
+    --activities-card-width: calc(100 / 375 * 315vw);
+    --activities-card-height: calc(100 / 375 * 200vw);
+    --activities-card-image-height: calc(100 / 375 * 141vw);
+    --activities-card-content-height: calc(100 / 375 * 59vw);
+    --activities-card-content-padding-inline: calc(100 / 375 * 19vw);
+    --activities-cards-gap: calc(100 / 375 * 15vw);
+    --activities-cards-direction: column;
+  }
 }
 
 .fa-solid { color: var(--main-color); }
@@ -221,7 +313,7 @@ a {
 
 /* Information : La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
 
-.information {
+.information-text {
   display: flex;
   align-items: center;
   width: 100%;
@@ -229,7 +321,7 @@ a {
   gap: 10px;
 }
 
-.information i {
+.information-text i {
   border: 1px solid var(--icon-bg-color);
   padding: 10px;
   border-radius: 50%;
