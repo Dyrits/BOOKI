@@ -28,6 +28,10 @@ body { line-height: 1; }
   --icon-bg-color: #D9D9D9;
   --filter-bg-color: #DEEBFF;
 
+  /* Tailles dynamiques les plus utilisées. */
+  --20px: min(calc(100 / 1440 * 20vw), 20px);
+  --30px: min(calc(100 / 1440 * 30vw), 30px);
+
   /*
     Ajout de variables pour des tailles dynamiques de 1024px à 1440px, avec valeur maximum.
     Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 1440px).
@@ -35,6 +39,7 @@ body { line-height: 1; }
     Les valeurs utilisées sont celles fournies dans les maquettes.
   */
   --content-gap: min(calc(100 / 1440 * 35vw), 35px);
+  --card-border-radius: var(--20px);
   --section-title-font-size: min(calc(100 / 1440 * 22vw), 22px);
   --card-title-font-size: min(calc(100 / 1440 * 16vw), 16px);
   --card-subtitle-font-size: min(calc(100 / 1440 * 14vw), 14px);
@@ -42,42 +47,45 @@ body { line-height: 1; }
   --accommodations-section-direction: row;
   --accomodations-section-gap: min(calc(100 / 1440 * 40vw), 40px);
   --accomodations-width: min(calc(100 / 1440 * 871vw), 871px);
-  --accomodations-gap: min(calc(100 / 1440 * 30vw), 30px);
-  --accomodations-padding: min(calc(100 / 1440 * 30vw), 30px);
+  --accomodations-gap: var(--30px);
+  --accomodations-padding: var(--30px);
   --accomodations-card-width: min(calc(100 / 1440 * 250vw), 250px);
   --accomodations-card-height: min(calc(100 / 1440 * 207vw), 207px);
   --accomodations-card-image-height: min(calc(100 / 1440 * 124vw), 124px);
   --accomodations-card-image-padding: min(calc(100 / 1440 * 5vw), 5px);
   --accomodations-card-content-height: min(calc(100 / 1440 * 79vw), 79px);
   --accomodations-card-content-padding: min(calc(100 / 1440 * 15vw), 15px);
-  --accomodations-cards-gap: min(calc(100 / 1440 * 30vw), 30px);
+  --accomodations-cards-gap: var(--30px);
   --accomodations-cards-direction: row;
   --show-more-title-font-size: min(calc(100 / 1440 * 18vw), 18px);
   --populars-width: min(calc(100 / 1440 * 429vw), 429px);
-  --populars-gap: min(calc(100 / 1440 * 30vw), 30px);
-  --populars-padding: min(calc(100 / 1440 * 30vw), 30px);
+  --populars-gap: var(--30px);
+  --populars-padding: var(--30px);
   --populars-card-width: min(calc(100 / 1440 * 369vw), 369px);
   --populars-card-height: min(calc(100 / 1440 * 144vw), 144px);
   --populars-card-image-width: min(calc(100 / 1440 * 144vw), 144px);
   --populars-card-image-padding: min(calc(100 / 1440 * 5vw), 5px);
   --populars-card-content-width: min(calc(100 / 1440 * 246vw), 246px);
   --populars-card-content-padding: min(calc(100 / 1440 * 15vw), 15px);
-  --populars-cards-gap: min(calc(100 / 1440 * 30vw), 30px);
+  --populars-cards-gap: var(--30px);
   --populars-cards-direction: column;
   --activities-width: 100%;
-  --activities-gap: min(calc(100 / 1440 * 30vw), 30px);
-  --activities-padding: min(calc(100 / 1440 * 30vw), 30px);
+  --activities-gap: var(--30px);
+  --activities-padding: var(--30px);
   --activities-card-width: min(calc(100 / 1440 * 297.5vw), 297.5px);
   --activities-card-height: min(calc(100 / 1440 * 439vw), 439px);
   --activities-card-image-height: min(calc(100 / 1440 * 380vw), 380px);
   --activities-card-content-height: min(calc(100 / 1440 * 59vw), 59px);
   --activities-card-content-padding-inline: min(calc(100 / 1440 * 19vw), 19px);
-  --activities-cards-gap: min(calc(100 / 1440 * 30vw), 30px);
+  --activities-cards-gap: var(--30px);
   --activities-cards-direction: row;
 }
 
 @media (max-width: 1024px) {
   :root {
+    --20px: calc(100 / 1024 * 20vw);
+    --30px: calc(100 / 1024 * 30vw);
+
     /*
       Modification des variables pour des tailles dynamiques de 768px à 1024px.
       Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 1024px).
@@ -85,6 +93,7 @@ body { line-height: 1; }
       Les valeurs utilisées sont celles fournies dans les maquettes.
     */
     --content-gap: calc(100 / 1024 * 35vw);
+    --card-border-radius: calc(100 / 1024 * 20vw);
     --section-title-font-size: calc(100 / 1024 * 22vw);
     --card-title-font-size: calc(100 / 1024 * 16vw);
     --card-subtitle-font-size: calc(100 / 1024 * 14vw);
@@ -136,6 +145,7 @@ body { line-height: 1; }
       Les valeurs utilisées sont celles fournies dans les maquettes.
     */
     --content-gap: calc(100 / 375 * 35vw);
+    --card-border-radius: calc(100 / 375 * 20vw);
     --section-title-font-size: calc(100 / 375 * 22vw);
     --card-title-font-size: calc(100 / 375 * 16vw);
     --card-subtitle-font-size: calc(100 / 375 * 14vw);
