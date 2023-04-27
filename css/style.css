@@ -1,7 +1,7 @@
 /****** GENERAL ***********/
 * {
   font-family: "Raleway", sans-serif;
-  /* Pour éviter les problèmes de padding et de border qui modifient la taille des éléments, on ajout la propriété à la racine. */
+  /* Pour éviter les problèmes de padding et de border qui modifient la taille des éléments, on ajoute la propriété dédiée à la racine. */
   box-sizing: border-box;
 }
 
@@ -62,7 +62,7 @@
 @media (max-width: 1024px) {
   :root {
     /*
-      Ajout de variables pour des tailles dynamiques de 768px à 1024px.
+      Modification des variables pour des tailles dynamiques de 768px à 1024px.
       Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 1024px).
       Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 1024, puis on multiplie par le nombre de pixels souhaité.
       Les valeurs utilisées sont celles fournies dans les maquettes.
@@ -114,7 +114,7 @@
 @media (max-width: 1024px) {
   :root {
     /*
-      Ajout de variables pour des tailles dynamiques de 320px à 768px.
+      Modification des variables pour des tailles dynamiques de 320px à 768px.
       Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 375px).
       Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 375, puis on multiplie par le nombre de pixels souhaité.
       Les valeurs utilisées sont celles fournies dans les maquettes.
@@ -210,7 +210,9 @@ a {
   border-top: 2px solid var(--main-color);
 }
 
-/******* HEADLINE *******/
+/******* INFORMATION SECTION *******/
+
+/******* Headline *******/
 
 /* Headline : La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
 
@@ -224,11 +226,11 @@ a {
   margin-bottom: 35px;
 }
 
-/***** SEARCH *****/
+/***** Search bar *****/
 
-/* Search form : La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
+/* Search bar : La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
 
-.search {
+.search-bar {
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -309,9 +311,9 @@ a {
 
 .filter-button:hover { background-color: var(--filter-bg-color); }
 
-/***** INFORMATION *****/
+/***** Information text *****/
 
-/* Information : La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
+/* Information text : La taille des éléments pas besoin d'être dynamique en fonction de la taille de l'écran pour les tablettes et ordinateurs. */
 
 .information-text {
   display: flex;
@@ -364,20 +366,12 @@ a {
 
 .neutral-star { color: var(--main-bg-color); }
 
-/****** SEARCH RESULTS ***********/
+/****** ACCOMMODATIONS SECTION ***********/
 
 /*
-  Search results : La taille des éléments a besoin d'être dynamique pour garder un ratio correct sur chaque taille d'écran intermédiaire.
+  Accommodations section : La taille des éléments a besoin d'être dynamique pour garder un ratio correct sur chaque taille d'écran intermédiaire.
   Les variables dynamiques sont utilisées.
  */
-
-.search-results {
-  display: flex;
-  flex-direction: column;
-  gap: var(--60px);
-}
-
-/****** Accommodations ***********/
 
 #accommodations-section {
   display: flex;
@@ -394,7 +388,7 @@ a {
   gap: var(--20px);
 }
 
-/****** --- # --- ***********/
+/****** Accommodations ***********/
 
 /* Après calcul, la taille du bloc des hébergements correspond à 65% de la largeur disponible. */
 .accommodations { width: 65%; }
@@ -442,7 +436,7 @@ a {
   font-weight: 700;
 }
 
-/****** # Populars ***********/
+/****** Populars ***********/
 
 /* Après calcul, la taille du bloc des hébergements populaires correspond à 32% de la largeur disponible. */
 .populars { width: 32%; }
@@ -488,7 +482,7 @@ a {
   margin-bottom: 5px;
 }
 
-/****** Activities ***********/
+/****** ACTIVITIES SECTION ***********/
 
 /* Activities : La taille des éléments a besoin d'être dynamique pour garder un ratio correct sur chaque taille d'écran intermédiaire. */
 
@@ -562,249 +556,4 @@ a {
 .flex-footer-column p {
   font-size: 16px;
   margin: 0;
-}
-
-@media (max-width: 1024px) {
-  :root {
-    /*
-      Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 1024px).
-      Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 1024px, puis on multiplie par le nombre de pixels souhaité.
-      Les valeurs utilisées sont celles fournies dans les maquettes.
-    */
-    --4px: min(calc(100 / 1024 * 4vw), 4px);
-    --5px: min(calc(100 / 1024 * 5vw), 5px);
-    --15px: min(calc(100 / 1024 * 15vw), 15px);
-    --16px: min(calc(100 / 1024 * 16vw), 16px);
-    --18px: min(calc(100 / 1024 * 18vw), 18px);
-    --19px: min(calc(100 / 1024 * 19vw), 19px);
-    --20px: min(calc(100 / 1024 * 20vw), 20px);
-    --22px: min(calc(100 / 1024 * 22vw), 22px);
-    --30px: min(calc(100 / 1024 * 30vw), 30px);
-    --40px: min(calc(100 / 1024 * 40vw), 40px);
-    --50px: min(calc(100 / 1024 * 50vw), 50px);
-    --60px: min(calc(100 / 1024 * 60vw), 60px);
-    --83px: min(calc(100 / 1024 * 83vw), 83px);
-    --123px: min(calc(100 / 1024 * 123vw), 123px);
-    --124px: min(calc(100 / 1024 * 124vw), 124px);
-    --146px: min(calc(100 / 1024 * 146vw), 146px);
-    --207px: min(calc(100 / 1024 * 207vw), 207px);
-    --210px: min(calc(100 / 1024 * 210vw), 210px);
-    --243px: min(calc(100 / 1024 * 243vw), 243px);
-    --246px: min(calc(100 / 1024 * 246vw), 246px);
-    --297px: min(calc(100 / 1024 * 297vw), 297px);
-    --369px: min(calc(100 / 1024 * 369vw), 369px);
-    --380px: min(calc(100 / 1024 * 380vw), 380px);
-    --439x: min(calc(100 / 1024 * 439vw), 439px);
-  }
-
-  /* Les filtres sont alignés différement, avec le titre au dessus. */
-  .search-filters {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  /* Les deux articles dans la section #accommodations-section sont alignés en colonne et prennent toute la largeur disponible. */
-  #accommodations-section { flex-direction: column; }
-  #accommodations-section > article { width: 100%; }
-
-  /* Les hébergements populaires sont alignés en ligne. */
-  .populars-cards {
-    flex-direction: row;
-    gap: var(--20px);
-  }
-
-  .populars-cards .card {
-    /* La largeur de la maquette est utilisée. Celle des composants étant différente (et trop large). */
-    aspect-ratio: 275/146;
-    width: min(calc(100 / 1024 * 275vw), 275px);
-  }
-
-  .populars-cards img { width: min(calc(100 / 1024 * 92vw), 92px); }
-
-  .activities-cards .card {
-    aspect-ratio: 194/270;
-    width: min(calc(100 / 1024 * 194vw), 194px);
-    max-height: min(calc(100 / 1024 * 270vw), 270px);
-  }
-
-  .activities-cards img {
-    /* La largeur de la maquette est utilisée. Celle des composants étant différente. */
-    width: min(calc(100 / 1024 * 194vw), 194px);
-    height: min(calc(100 / 1024 * 200vw), 200px);
-  }
-
-  .activities-cards h3 {
-    margin: 0;
-    padding: var(--16px) var(--19px);
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    /*
-      Les valeurs sont calculées en fonction de la taille de l'écran, pour être à la bonne valeur précise par rapport à la maquette (sur la base de 375px).
-      Sur la base de 100vw, on obtient la valeur d'un pixel pour un écran de 375px, puis on multiplie par le nombre de pixels souhaité.
-      Les valeurs utilisées sont celles fournies dans les maquettes.
-    */
-    --4px: calc(100 / 375 * 4vw);
-    --5px: calc(100 / 375 * 5vw);
-    --15px: calc(100 / 375 * 15vw);
-    --16px: calc(100 / 375 * 16vw);
-    --18px: calc(100 / 375 * 18vw);
-    --19px: calc(100 / 375 * 19vw);
-    --20px: calc(100 / 375 * 20vw);
-    --22px: calc(100 / 375 * 22vw);
-    --30px: calc(100 / 375 * 30vw);
-    --40px: calc(100 / 375 * 40vw);
-    --50px: calc(100 / 375 * 50vw);
-    --60px: calc(100 / 375 * 60vw);
-    --83px: calc(100 / 375 * 83vw);
-    --123px: calc(100 / 375 * 123vw);
-    --124px: calc(100 / 375 * 124vw);
-    --146px: calc(100 / 375 * 146vw);
-    --207px: calc(100 / 375 * 207vw);
-    --210px: calc(100 / 375 * 210vw);
-    --243px: calc(100 / 375 * 243vw);
-    --246px: calc(100 / 375 * 246vw);
-    --297px: calc(100 / 375 * 297vw);
-    --369px: calc(100 / 375 * 369vw);
-    --380px: calc(100 / 375 * 380vw);
-  }
-
-  /* Le menu d'entête est affiché différement et est centré sur toute la largeur disponible. */
-
-  .header-nav {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header-nav .logo { margin: 30px; }
-
-  .header-nav .nav-menu {
-    width: 100vw;
-    display: flex;
-    border: none;
-    border-bottom: 2px solid var(--main-bg-color);
-  }
-
-  .header-nav .nav-link {
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-  }
-
-  .header-nav .nav-link:hover {
-    border-top: none;
-    border-bottom: 2px solid var(--main-color);
-  }
-
-  /* Le containeur principal n'a plus de padding partout. Celui-ci est géré par section. */
-  .main-container { padding: 0; }
-  .headline, .search, .information, .accommodations { padding-inline: var(--20px); }
-
-  /* La barre de recherche est affiché sur presque toute la largeur disponible. */
-  .search-form { width: calc(100 / 375 * 335vw); }
-
-  .search-form .search-button { display: none; }
-
-  /* Le bouton est caché pour les écrans de taille inférieure à 768px. */
-  .search-form .mobile-search-button {
-    border-radius: 15px;
-    margin-left: -15px;
-    display: block;
-    background-color: var(--main-color);
-    border: 1px solid var(--main-color);
-    height: 50px;
-    width: 50px;
-  }
-
-  .search-form .mobile-search-button i { color: #FFF; }
-
-  /* La hauteur des filtres reste fixe, seule la largeur change. */
-  .search-filters { height: 161px }
-
-  .search-filters .filter-buttons {
-    flex-wrap: wrap;
-    gap: calc(100 / 375 * 10vw);
-  }
-
-  .filter-buttons .filter-button {
-    width: calc(100 / 375 * 162vw);
-    height: 50px;
-    /* La taille d'écriture est réduite en affichage mobile. */
-    font-size: 14px;
-  }
-
-  /* Les blocs sont inversés en affichage mobile. */
-  #accommodations-section { flex-direction: column-reverse; }
-
-  #accommodations-section > article {
-    border-radius: 0;
-    padding: var(--20px);
-  }
-
-  #accommodations-section .accommodations { background-color: #FFF ; }
-
-  .populars-cards {
-    flex-direction: column;
-    gap: var(--15px);
-  }
-
-  .populars-cards .card {
-    /* La largeur de la maquette est utilisée. Celle des composants étant différente (et trop large). */
-    aspect-ratio: 335/146;
-    width: calc(100 / 375 * 335vw);
-  }
-
-  .populars-cards img { width: calc(100 / 375 * 112vw); }
-  .populars-cards .card-content { width: calc(100 / 375 * 223vw); }
-
-  .accommodations-cards {
-    display: flex;
-    justify-content: space-around;
-    gap: var(--30px);
-    flex-wrap: wrap;
-  }
-
-  .accommodations-cards .card {
-    /* On essaye de préserver le ratio de chaque carte (notamment la hauteur). */
-    aspect-ratio: 335/207;
-    width: calc(100 / 375 * 335vw);
-  }
-
-  .activities { padding: var(--20px); }
-  .activities-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .activities-cards .card {
-    /* La largeur de la maquette est utilisée. Celle des composants étant différente. */
-    aspect-ratio: 315/200;
-    width: calc(100 / 375 * 315vw);
-    max-height: calc(100 / 375 * 200vw);
-  }
-
-  .activities-cards img {
-    /* La largeur de la maquette est utilisée. Celle des composants étant différente. */
-    width: calc(100 / 375 * 315vw);
-    height: calc(100 / 375 * 141vw);
-  }
-
-  .activities-cards h3 {
-    margin: 0;
-    padding: var(--16px) var(--19px);
-    height: calc(100 / 375 * 59vw);
-  }
-
-  .footer {  padding-block: 30px; }
-
-  .flex-footer-row {
-    flex-direction: column;
-    gap: 50px;
-  }
-
-  .flex-footer-column { margin-left: 30px;}
 }
