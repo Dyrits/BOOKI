@@ -35,7 +35,6 @@
     }
 
     button {
-      @include flex-center;
       height: inherit;
       background-color: $blue;
       color: $white;
@@ -45,12 +44,14 @@
     }
 
     &-submit {
+      @include flex-center;
       @include dynamic-values(display, flex, (768: none));
       @include dynamic-sizes(width, 132);
       @include border-radius(0, 15, 15, 0);
     }
 
     &-mobile-submit {
+      @include flex-center;
       @include dynamic-values(display, none, (768: flex));
       @include square(49);
       @include dynamic-sizes(margin-left, -15);
