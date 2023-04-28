@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @function dynamic-size($viewport, $size) {
   $viewport: $viewport;
   @if $viewport == 768 { $viewport: 375; }
@@ -5,8 +7,9 @@
   @else { @return calc(100 / #{ $viewport } * #{ $size }vw); }
 }
 
-@mixin dynamic-sizes($property, $default-size, $viewport-sizes, $breakpoint-type: max-width) {
-  #{ $property }: #{ dynamic-size($default-size, 1440) };
+@mixin dynamic-sizes($property, $default-size, $viewport-sizes: (1024 : $default-size, 768 : $default-size), $breakpoint-type: max-width) {
+  $viewport-sizes: map.merge((1024 : $default-size, 768 : $default-size), $viewport-sizes);
+  #{ $property }: #{ dynamic-size(1440, $default-size) };
   @each $viewport, $size in $viewport-sizes {
     @media ($breakpoint-type: "#{ $viewport }px") {
       #{ $property }: #{ dynamic-size($viewport, $size) };
@@ -14,11 +17,24 @@
   }
 }
 
-@mixin dynamic-values($property, $default-value, $viewport-values, $breakpoint-type: max-width) {
+@mixin dynamic-values($property, $default-value, $viewport-values: (1024 : $default-value, 768 : $default-value), $breakpoint-type: max-width) {
+  $viewport-values: map.merge((1024 : $default-value, 768 : $default-value), $viewport-values);
   #{ $property }: #{ $default-value };
   @each $viewport, $value in $viewport-values {
     @media ($breakpoint-type: "#{ $viewport }px") {
       #{ $property }: #{ $value };
     }
   }
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
