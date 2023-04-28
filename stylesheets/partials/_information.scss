@@ -82,6 +82,8 @@
         @include dynamic-sizes(border-radius, 25);
         font-weight: 700;
 
+        span { @include dynamic-sizes(font-size, 16, (768: 14)); }
+
         &:hover { background-color: $blue-grey; }
       }
     }
