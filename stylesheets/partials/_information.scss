@@ -1,5 +1,5 @@
-@import "utilities/mixins";
 @import "utilities/variables";
+@import "utilities/mixins";
 
 .information {
   @include flex-column;
@@ -20,41 +20,42 @@
     &-icon {
       @include flex-center;
       @include dynamic-sizes(width, 50);
-      @include dynamic-sizes(height, 49);
+      height: inherit;
       background-color: $grey;
+      color: $black;
       @include border-radius(15, 0, 0, 15);
     }
 
     &-input {
-      @include dynamic-values(flex, 0 1 auto, (768: 1));
-      height: 100%;
-      @include dynamic-sizes(border-width, 1);
-      outline: none;
+      flex: 1;
+      height: inherit;
       @include dynamic-sizes(padding-left, 24);
+      @include border-solid(1, $grey);
+      outline: none;
+    }
+
+    button {
+      height: inherit;
+      background-color: $blue;
+      color: $white;
+      border: none;
+
+      i { color: $white; }
     }
 
     &-submit {
       @include flex-center;
       @include dynamic-values(display, flex, (768: none));
       @include dynamic-sizes(width, 132);
-      height: inherit;
-      background-color: $blue;
-      color: $white;
       @include border-radius(0, 15, 15, 0);
     }
 
     &-mobile-submit {
       @include flex-center;
       @include dynamic-values(display, none, (768: flex));
-      height: inherit;
-      width: var(--search-bar-icon-size);
-      background-color: var(--main-color);
-      color: white;
-      border: 0.5px solid var(--main-color);
-      border-radius: var(--search-bar-icon-mobile-border-radius);
-      margin-left: -15px;
-
-      i { color: #FFF; }
+      @include square(49);
+      @include dynamic-sizes(margin-left, -15);
+      @include dynamic-sizes(border-radius, 15);
     }
   }
 
@@ -62,45 +63,39 @@
     display: flex;
     @include dynamic-values(flex-direction, row, (1024: column, 768: column));
     height: fit-content;
-    align-items: var(--search-filters-alignment);
-    gap: var(--search-filters-gap);
+    @include dynamic-values(align-items, center, (1024: flex-start, 768: flex-start));
+    @include dynamic-sizes(gap, 15, (1024: 20, 768: 20));
 
     &-buttons {
       @include flex-row;
       flex-wrap: wrap;
-      gap: var(--search-filters-buttons-gap);
+      @include dynamic-sizes(gap, 15);
 
       a {
         @include flex-center;
-        font-size: var(--regular-font-size);
-        height: var(--search-filter-button-height);
-        border: 1px solid var(--icon-bg-color);
-        border-radius: var(--search-filter-button-border-radius);
+        @include dynamic-values(flex, 0 1 auto, (768: 1));
+        @include dynamic-sizes(gap, 10);
+        @include dynamic-sizes(height, 50);
+        @include dynamic-sizes(padding-inline, 19);
+        @include dynamic-sizes(padding-block, 4);
+        @include border-solid(1, $grey);
+        @include dynamic-sizes(border-radius, 25);
         font-weight: 700;
-        gap: var(--search-filter-button-gap);
-        padding: var(--search-filter-button-padding);
 
-        &:hover { background-color: var(--filter-bg-color); }
-
-        @media (max-width: 768px) { flex: 1; }
+        &:hover { background-color: $blue-grey; }
       }
     }
   }
 
   &-text {
     @include flex-row;
-    gap: var(--information-text-gap);
+    @include dynamic-sizes(gap, 10);
 
     i {
-      border: 1px solid var(--icon-bg-color);
-      padding: 10px;
+      @include flex-center;
+      @include square(24);
+      @include border-solid(1, $grey);
       border-radius: 50%;
     }
   }
-}
-
-
-@media (max-width: 768px) {
-  .search-bar .search-button { display: none; }
-  .search-bar .mobile-search-button { display: flex; }
 }

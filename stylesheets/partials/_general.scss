@@ -1,9 +1,16 @@
+@import "utilities/variables";
 @import "utilities/mixins";
 
 * {
   font-family: "Raleway", sans-serif;
   @include dynamic-sizes(font-size, 16);
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  font-family: "Raleway", sans-serif;
 }
 
 .text-extra-large { @include text-bold(22); }

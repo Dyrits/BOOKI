@@ -40,9 +40,15 @@
 
 @mixin border-radius($top-left, $top-right, $bottom-right, $bottom-left) {
   @include dynamic-sizes(border-top-left-radius, $top-left);
-  @include dynamic-sizes(border-top-right, $top-right);
-  @include dynamic-sizes(border-bottom-right, $bottom-right);
+  @include dynamic-sizes(border-top-right-radius, $top-right);
+  @include dynamic-sizes(border-bottom-right-radius, $bottom-right);
   @include dynamic-sizes(border-bottom-left-radius, $bottom-left);
+}
+
+@mixin square($size) {
+  aspect-ratio: 1;
+  @include dynamic-sizes(width, $size);
+  @include dynamic-sizes(height, $size);
 }
 
 @mixin flex-row {
