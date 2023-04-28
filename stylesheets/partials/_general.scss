@@ -1,0 +1,11 @@
+@import "utilities/mixins";
+
+* {
+  font-family: "Raleway", sans-serif;
+  @include dynamic-sizes(font-size, 16);
+  box-sizing: border-box;
+}
+
+.text-extra-large { @include text-bold(22); }
+
+.text-large { @include text-bold(18); }

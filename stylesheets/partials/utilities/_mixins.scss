@@ -27,10 +27,33 @@
   }
 }
 
+@mixin text-bold($font-size) {
+  @include dynamic-sizes(font-size, $font-size);
+  font-weight: 700;
+}
+
+@mixin border-solid($border-width, $border-color) {
+  @include dynamic-sizes(border-width, 1);
+  border-style: solid;
+  border-color: $border-color;
+}
+
+@mixin border-radius($top-left, $top-right, $bottom-right, $bottom-left) {
+  @include dynamic-sizes(border-top-left-radius, $top-left);
+  @include dynamic-sizes(border-top-right, $top-right);
+  @include dynamic-sizes(border-bottom-right, $bottom-right);
+  @include dynamic-sizes(border-bottom-left-radius, $bottom-left);
+}
+
 @mixin flex-row {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin flex-center {

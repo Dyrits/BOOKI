@@ -2,10 +2,7 @@
 
 /* -- GENERAL -- */
 
-* {
-  font-family: "Raleway", sans-serif;
-  box-sizing: border-box;
-}
+
 
 :root {
   --main-color: #0065FC;
@@ -37,23 +34,11 @@
   --content-margin-block: var(--30px);
   --content-gap: min(calc(100 / 1440 * 35vw), 35px);
 
-  /* Information section */
-  --information-section-padding-inline: 0;
-  --information-section-gap: var(--30px);
-  /* Headline */
-  --headline-gap: min(calc(100 / 1440 * 8vw), 8px);
   /* Search bar */
-  --search-bar-width: min(calc(100 / 1440 * 377vw), 377px);
-  --search-bar-height: min(calc(100 / 1440 * 49vw), 49px);
   --search-bar-justify-content: flex-start;
   /* Search bar input */
-  --search-bar-input-padding-left: min(calc(100 / 1440 * 24vw), 24px);
   /* Search bar button */
   --search-bar-button-width: min(calc(100 / 1440 * 132vw), 132px);
-  /* Search bar icons */
-  --icon-size: min(calc(100 / 1440 * 50vw), 49px);
-  --icon-border-radius-left: var(--15px) 0 0 var(--15px);
-  --icon-border-radius-right: 0 var(--15px) var(--15px) 0;
   /* Search filters */
   --search-filters-direction: row;
   --search-filters-align-items: center;
@@ -137,10 +122,6 @@
     --card-subtitle-font-size: calc(100 / 1024 * 14vw);
     --information-section-gap: calc(100 / 1024 * 35vw);
     --headline-gap: calc(100 / 1024 * 8vw);
-    --search-bar-width: calc(100 / 1024 * 377vw);
-    --search-bar-height: calc(100 / 1024 * 49vw);
-    --search-bar-icon-size: calc(100 / 1024 * 49vw);
-    --search-bar-input-padding-left: calc(100 / 1024 * 24vw);
     --search-bar-button-width: calc(100 / 1024 * 132vw);
     --search-filters-direction: column;
     --search-filters-alignment: flex-start;
@@ -189,15 +170,6 @@
     --main-container-padding-inline: 0;
     --section-title-font-size: calc(100 / 375 * 22vw);
     --card-subtitle-font-size: calc(100 / 375 * 14vw);
-    --information-section-gap: calc(100 / 375 * 35vw);
-    --information-section-padding-inline: var(--20px);
-    --headline-gap: calc(100 / 375 * 8vw);
-    --search-bar-width: calc(100 / 375 * 335vw);
-    --search-bar-height: calc(100 / 375 * 49vw);
-    --search-bar-justify-content: center;
-    --search-bar-icon-size: calc(100 / 375 * 49vw);
-    --search-bar-icon-border-radius: var(--15px) 0 0 var(--15px);
-    --search-bar-input-padding-left: calc(100 / 375 * 24vw);
     --search-bar-icon-mobile-border-radius: var(--15px);
     --search-filter-button-height: calc(100 / 375 * 50vw);
     --search-filter-button-border-radius: calc(100 / 375 * 25vw);

@@ -1,50 +1,46 @@
 @import "utilities/mixins";
+@import "utilities/variables";
 
 .information {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   @include dynamic-sizes(gap, 30, (768: 35));
   @include dynamic-sizes(padding-inline, 0, (768: 20));
 
   .headline {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     @include dynamic-sizes(gap, 8);
   }
 
   .search-bar-form {
     @include flex-row;
+    @include dynamic-values(justify-content, flex-start, (768: center));
     @include dynamic-sizes(width, 377, (768: 335));
     @include dynamic-sizes(height, 49);
 
     &-icon {
       @include flex-center;
-      font-size: var(--regular-font-size);
-      min-height: var(--search-bar-icon-size);
-      min-width: var(--search-bar-icon-size);
-      background-color: var(--icon-bg-color);
-      color: black;
-      border-radius: var(--search-bar-icon-border-radius);
+      @include dynamic-sizes(width, 50);
+      @include dynamic-sizes(height, 49);
+      background-color: $grey;
+      @include border-radius(15, 0, 0, 15);
     }
 
     &-input {
-      flex: 1;
+      @include dynamic-values(flex, 0 1 auto, (768: 1));
       height: 100%;
-      border: 1px solid var(--icon-bg-color);
+      @include dynamic-sizes(border-width, 1);
       outline: none;
-      border-right: 0;
-      padding-left: var(--search-bar-input-padding-left);
+      @include dynamic-sizes(padding-left, 24);
     }
 
     &-submit {
       @include flex-center;
       @include dynamic-values(display, flex, (768: none));
+      @include dynamic-sizes(width, 132);
       height: inherit;
-      width: var(--search-bar-button-width);
-      background-color: var(--main-color);
-      color: white;
-      border: 0.5px solid var(--main-color);
-      border-radius: var(--search-bar-button-border-radius);
+      background-color: $blue;
+      color: $white;
+      @include border-radius(0, 15, 15, 0);
     }
 
     &-mobile-submit {
