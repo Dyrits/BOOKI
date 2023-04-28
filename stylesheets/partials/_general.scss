@@ -13,6 +13,8 @@ a {
   font-family: "Raleway", sans-serif;
 }
 
+button { cursor: pointer; }
+
 .text-extra-large { @include text-bold(22); }
 
 .text-large { @include text-bold(18); }

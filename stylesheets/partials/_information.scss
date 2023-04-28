@@ -36,9 +36,9 @@
 
     button {
       height: inherit;
+      border: none;
       background-color: $blue;
       color: $white;
-      border: none;
 
       i { color: $white; }
     }
@@ -71,7 +71,7 @@
       flex-wrap: wrap;
       @include dynamic-sizes(gap, 15);
 
-      a {
+      button {
         @include flex-center;
         @include dynamic-values(flex, 0 1 auto, (768: 1));
         @include dynamic-sizes(gap, 10);
@@ -80,6 +80,7 @@
         @include dynamic-sizes(padding-block, 4);
         @include border-solid(1, $grey);
         @include dynamic-sizes(border-radius, 25);
+        background-color: $white;
         font-weight: 700;
 
         span { @include dynamic-sizes(font-size, 16, (768: 14)); }
