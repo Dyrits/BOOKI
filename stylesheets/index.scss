@@ -170,7 +170,7 @@
   }
 }
 
-.fa-solid { color: var(--main-color); }
+
 
 
 
@@ -225,140 +225,9 @@ p, span, i { font-size: var(--regular-font-size); }
 }
 
 @import "partials/information";
+@import "partials/accommodations";
 
-/* -- GENERAL: TITLES AND CARDS -- */
 
-.section-title {
-  /* La taille du titre des sections ne changent pas d'un support à l'autre mais peut causer des légers problèmes lors du redimensionnement. */
-  font-size: var(--section-title-font-size);
-  font-weight: 700;
-}
-
-.card {
-  background-color: white;
-  border-radius: var(--card-border-radius);
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-}
-
-.card img { object-fit: cover; }
-
-/*
-  La taille du contenu textuel des cartes ne changent pas d'un support à l'autre mais peut causer des problèmes de débordement lors du redimensionnement.
-  Une taille dynamique est utilisée.
-*/
-
-.card-title { font-size: var(--card-title-font-size); }
-
-.card-subtitle { font-size: var(--card-subtitle-font-size); }
-
-.card-rating { font-size: var(--16px); }
-
-.euro { font-weight: 700; }
-
-.neutral-star { color: var(--main-bg-color); }
-
-/* -- ACCOMMODATIONS SECTION -- */
-/*
-  La taille des éléments a besoin d'être dynamique pour garder un ratio correct sur chaque taille d'écran intermédiaire.
-  Les variables dynamiques sont utilisées.
- */
-
-#accommodations-section {
-  display: flex;
-  flex-direction: var(--accommodations-section-direction);
-  gap: var(--accommodations-gap);
-}
-
-#accommodations-section > article { background-color: var(--main-bg-color); }
-
-#accommodations-section img { padding: var(--accommodations-section-card-image-padding); }
-
-#accommodations-section .card-content { padding: var(--accommodations-section-card-content-padding); }
-
-/* -- Accommodations -- */
-
-/* Après calcul, la taille du bloc des hébergements correspond à 65% de la largeur disponible. */
-.accommodations {
-  width: var(--accommodations-width);
-  padding: var(--accommodations-padding);
-  border-radius: var(--accommodations-border-radius);
-}
-
-.accommodations-cards {
-  display: flex;
-  justify-content: space-around;
-  gap: var(--accommodations-cards-gap);
-  flex-direction: var(--accommodations-cards-direction);
-  flex-wrap: wrap;
-}
-
-.accommodations-cards .card {
-  display: flex;
-  flex-direction: column;
-  width: var(--accommodations-card-width);
-  max-height: var(--accommodations-card-height);
-}
-
-.accommodations-cards img {
-  height: var(--accommodations-card-image-height);
-  border-radius: var(--card-image-border-radius-top);
-}
-
-/* L'agencement du contenu des cartes est différent d'une section à l'autre. Ici, le sous-titre est en bas de la carte. */
-.accommodations-cards .card-content {
-  display: flex;
-  flex-direction: column;
-  height: var(--accommodations-card-content-height);
-  justify-content: space-between;
-}
-
-.show-more-title {
-  font-size: var(--show-more-title-font-size);
-  font-weight: 700;
-}
-
-/* -- Populars -- */
-
-/* Après calcul, la taille du bloc des hébergements populaires correspond à 32% de la largeur disponible. */
-.populars {
-  display: flex;
-  flex-direction: column;
-  width: var(--populars-width);
-  padding: var(--populars-padding);
-  gap: var(--populars-gap);
-}
-
-.populars-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.populars-cards {
-  display: flex;
-  flex-direction: var(--populars-cards-direction);
-  justify-content: space-around;
-  gap: var(--populars-cards-gap);
-}
-
-.populars-cards .card {
-  box-sizing: border-box;
-  display: flex;
-  width: var(--populars-card-width);
-  max-height: var(--populars-card-height);
-}
-
-.populars-cards img {
-  width: var(--populars-card-image-width);
-  border-radius: var(--card-image-border-radius-left);
-}
-
-.populars-cards .card-content {
-  width: var(--populars-card-content-width);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 /* -- ACTIVITIES SECTION -- */
 /* La taille des éléments a besoin d'être dynamique pour garder un ratio correct sur chaque taille d'écran intermédiaire. */

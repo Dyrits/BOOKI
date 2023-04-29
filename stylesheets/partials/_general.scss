@@ -3,7 +3,7 @@
 
 * {
   font-family: "Raleway", sans-serif;
-  @include dynamic-sizes(font-size, 16);
+  @include responsive-sizes(font-size, 16);
   box-sizing: border-box;
 }
 
@@ -15,6 +15,20 @@ a {
 
 button { cursor: pointer; }
 
-.text-extra-large { @include text-bold(22); }
+.fa-solid { color: $blue; }
 
-.text-large { @include text-bold(18); }
+.text-bold-extra-large { @include text-bold(22); }
+
+.text-bold-large { @include text-bold(18); }
+
+.text-bold-regular { @include text-bold(16); }
+
+.text-small {   @include responsive-sizes(font-size, 14); }
+
+.card {
+  @include responsive-sizes(border-radius, 20);
+  @include responsive-values(box-shadow, 0px resize(1440, 3) resize(1440, 15) rgba(0, 0, 0, 0.1), (1024: 0px resize(1024, 3) resize(1024, 15) rgba(0, 0, 0, 0.1), 768: 0px resize(768, 3) resize(768, 15) rgba(0, 0, 0, 0.1)));
+  img { object-fit: cover; }
+  .euro { font-weight: 700; }
+  .neutral-star { color: $light-grey }
+}

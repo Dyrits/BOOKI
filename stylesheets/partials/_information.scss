@@ -3,23 +3,23 @@
 
 .information {
   @include flex-column;
-  @include dynamic-sizes(gap, 30, (768: 35));
-  @include dynamic-sizes(padding-inline, 0, (768: 20));
+  @include responsive-sizes(gap, 30, (768: 35));
+  @include responsive-sizes(padding-inline, 0, (768: 20));
 
   .headline {
     @include flex-column;
-    @include dynamic-sizes(gap, 8);
+    @include responsive-sizes(gap, 8);
   }
 
   .search-bar-form {
     @include flex-row;
-    @include dynamic-values(justify-content, flex-start, (768: center));
-    @include dynamic-sizes(width, 377, (768: 335));
-    @include dynamic-sizes(height, 49);
+    @include responsive-values(justify-content, flex-start, (768: center));
+    @include responsive-sizes(width, 377, (768: 335));
+    @include responsive-sizes(height, 49);
 
     &-icon {
       @include flex-center;
-      @include dynamic-sizes(width, 50);
+      @include responsive-sizes(width, 50);
       height: inherit;
       background-color: $grey;
       color: $black;
@@ -29,8 +29,8 @@
     &-input {
       flex: 1;
       height: inherit;
-      @include dynamic-sizes(padding-left, 24);
-      @include border-solid(1, $grey);
+      @include responsive-sizes(padding-left, 24);
+      @include border(1, $grey);
       outline: none;
     }
 
@@ -45,45 +45,45 @@
 
     &-submit {
       @include flex-center;
-      @include dynamic-values(display, flex, (768: none));
-      @include dynamic-sizes(width, 132);
+      @include responsive-values(display, flex, (768: none));
+      @include responsive-sizes(width, 132);
       @include border-radius(0, 15, 15, 0);
     }
 
     &-mobile-submit {
       @include flex-center;
-      @include dynamic-values(display, none, (768: flex));
+      @include responsive-values(display, none, (768: flex));
       @include square(49);
-      @include dynamic-sizes(margin-left, -15);
-      @include dynamic-sizes(border-radius, 15);
+      @include responsive-sizes(margin-left, -15);
+      @include responsive-sizes(border-radius, 15);
     }
   }
 
   .search-filters {
     display: flex;
-    @include dynamic-values(flex-direction, row, (1024: column, 768: column));
+    @include responsive-values(flex-direction, row, (1024: column, 768: column));
     height: fit-content;
-    @include dynamic-values(align-items, center, (1024: flex-start, 768: flex-start));
-    @include dynamic-sizes(gap, 15, (1024: 20, 768: 20));
+    @include responsive-values(align-items, center, (1024: flex-start, 768: flex-start));
+    @include responsive-sizes(gap, 15, (1024: 20, 768: 20));
 
     &-buttons {
       @include flex-row;
       flex-wrap: wrap;
-      @include dynamic-sizes(gap, 15);
+      @include responsive-sizes(gap, 15);
 
       button {
         @include flex-center;
-        @include dynamic-values(flex, 0 1 auto, (768: 1));
-        @include dynamic-sizes(gap, 10);
-        @include dynamic-sizes(height, 50);
-        @include dynamic-sizes(padding-inline, 19);
-        @include dynamic-sizes(padding-block, 4);
-        @include border-solid(1, $grey);
-        @include dynamic-sizes(border-radius, 25);
+        @include responsive-values(flex, 0 1 auto, (768: 1));
+        @include responsive-sizes(gap, 10);
+        @include responsive-sizes(height, 50);
+        @include responsive-sizes(padding-inline, 19);
+        @include responsive-sizes(padding-block, 4);
+        @include border(1, $grey);
+        @include responsive-sizes(border-radius, 25);
         background-color: $white;
         font-weight: 700;
 
-        span { @include dynamic-sizes(font-size, 16, (768: 14)); }
+        span { @include responsive-sizes(font-size, 16, (768: 14)); }
 
         &:hover { background-color: $blue-grey; }
       }
@@ -92,12 +92,12 @@
 
   &-text {
     @include flex-row;
-    @include dynamic-sizes(gap, 10);
+    @include responsive-sizes(gap, 10);
 
     i {
       @include flex-center;
       @include square(24);
-      @include border-solid(1, $grey);
+      @include border(1, $grey);
       border-radius: 50%;
     }
   }

@@ -1,23 +1,23 @@
 @use "sass:map";
 
-@function dynamic-size($viewport, $size) {
+@function resize($viewport, $size) {
   $viewport: $viewport;
   @if $viewport == 768 { $viewport: 375; }
   @if $viewport == 1440 { @return min(calc(100 / #{ $viewport } * #{ $size }vw), #{ $size }px); }
   @else { @return calc(100 / #{ $viewport } * #{ $size }vw); }
 }
 
-@mixin dynamic-sizes($property, $default-size, $viewport-sizes: (1024 : $default-size, 768 : $default-size), $breakpoint-type: max-width) {
+@mixin responsive-sizes($property, $default-size, $viewport-sizes: (1024 : $default-size, 768 : $default-size), $breakpoint-type: max-width) {
   $viewport-sizes: map.merge((1024 : $default-size, 768 : $default-size), $viewport-sizes);
-  #{ $property }: #{ dynamic-size(1440, $default-size) };
+  #{ $property }: #{ resize(1440, $default-size) };
   @each $viewport, $size in $viewport-sizes {
     @media ($breakpoint-type: "#{ $viewport }px") {
-      #{ $property }: #{ dynamic-size($viewport, $size) };
+      #{ $property }: #{ resize($viewport, $size) };
     }
   }
 }
 
-@mixin dynamic-values($property, $default-value, $viewport-values: (1024 : $default-value, 768 : $default-value), $breakpoint-type: max-width) {
+@mixin responsive-values($property, $default-value, $viewport-values: (1024 : $default-value, 768 : $default-value), $breakpoint-type: max-width) {
   $viewport-values: map.merge((1024 : $default-value, 768 : $default-value), $viewport-values);
   #{ $property }: #{ $default-value };
   @each $viewport, $value in $viewport-values {
@@ -28,27 +28,34 @@
 }
 
 @mixin text-bold($font-size) {
-  @include dynamic-sizes(font-size, $font-size);
+  @include responsive-sizes(font-size, $font-size);
   font-weight: 700;
 }
 
-@mixin border-solid($border-width, $border-color) {
-  @include dynamic-sizes(border-width, 1);
+@mixin padding($top, $right, $bottom, $left) {
+  @include responsive-sizes(padding-top, $top);
+  @include responsive-sizes(padding-right, $right);
+  @include responsive-sizes(padding-bottom, $bottom);
+  @include responsive-sizes(padding-left, $left);
+}
+
+@mixin border($border-width, $border-color) {
+  @include responsive-sizes(border-width, 1);
   border-style: solid;
   border-color: $border-color;
 }
 
 @mixin border-radius($top-left, $top-right, $bottom-right, $bottom-left) {
-  @include dynamic-sizes(border-top-left-radius, $top-left);
-  @include dynamic-sizes(border-top-right-radius, $top-right);
-  @include dynamic-sizes(border-bottom-right-radius, $bottom-right);
-  @include dynamic-sizes(border-bottom-left-radius, $bottom-left);
+  @include responsive-sizes(border-top-left-radius, $top-left);
+  @include responsive-sizes(border-top-right-radius, $top-right);
+  @include responsive-sizes(border-bottom-right-radius, $bottom-right);
+  @include responsive-sizes(border-bottom-left-radius, $bottom-left);
 }
 
 @mixin square($size) {
   aspect-ratio: 1;
-  @include dynamic-sizes(width, $size);
-  @include dynamic-sizes(height, $size);
+  @include responsive-sizes(width, $size);
+  @include responsive-sizes(height, $size);
 }
 
 @mixin flex-row {
@@ -66,4 +73,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin flex-around {
+  display: flex;
+  justify-content: space-around;
 }
