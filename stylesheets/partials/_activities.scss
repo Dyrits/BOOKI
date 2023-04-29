@@ -1,0 +1,28 @@
+@import "utilities/mixins";
+
+.activities {
+  @include flex-column;
+  width: 100%;
+  @include responsive-sizes(gap, 30, (768: 20));
+  @include responsive-sizes(padding, 30);
+  &-cards {
+    @include flex-around;
+    @include responsive-values(flex-direction, row, (768: column));
+    @include responsive-sizes(gap, 30, (768: 20));
+    .card {
+      @include flex-column;
+      @include responsive-sizes(width, 297.5, (1024: 193.5, 768: 315));
+      @include responsive-sizes(height, 439, (1024: 270, 768: 200));
+      img {
+        @include responsive-sizes(height, 380, (1024: 200, 768: 141));
+        @include border-radius(20, 20, 0, 0);
+      }
+      &-content {
+        @include flex-row;
+        @include responsive-sizes(height, 59, (1024: 70, 768: 59));
+        @include responsive-sizes(padding-right, 19);
+        @include responsive-sizes(padding-left, 19);
+      }
+    }
+  }
+}

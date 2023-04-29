@@ -1,0 +1,18 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+
+.footer {
+  display: flex;
+  @include responsive-values(flex-direction, row, (768: column));
+  width: 100%;
+  @include responsive-sizes(height, 163, (768: 461));
+  @include responsive-sizes(gap, 50);
+  @include responsive-sizes(padding, 20, (768: 30));
+  background-color: $light-grey;
+  font-family: "Raleway", sans-serif;
+  article {
+    flex: 1;
+    @include flex-column;
+    @include responsive-sizes(gap, 15);
+  }
+}

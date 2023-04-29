@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 a {
   text-decoration: none;
   color: $black;
@@ -14,6 +19,24 @@ a {
 }
 
 button { cursor: pointer; }
+
+.body {
+  @include flex-column;
+  width: 100%;
+  max-width: 1440px;
+  @include responsive-sizes(padding-inline, 50, (768: 0));
+  @include responsive-sizes(gap, 30);
+  .container {
+    @include flex-column;
+    @include responsive-sizes(gap, 35);
+    main {
+      @include flex-column;
+      @include responsive-sizes(gap, 35);
+    }
+  }
+}
+
+
 
 .fa-solid { color: $blue; }
 
