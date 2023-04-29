@@ -1,28 +1,6 @@
 @import "partials/reset";
 @import "partials/general";
-
-.header-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-nav img {
-  width: 62px;
-  margin-top: 15px;
-}
-
-.header-nav .nav-link {
-  text-decoration: none;
-  color: black;
-  margin: 20px;
-}
-
-.header-nav .nav-link:hover {
-  color: var(--main-color);
-  border-top: 2px solid var(--main-color);
-}
-
+@import "partials/header";
 @import "partials/information";
 @import "partials/accommodations";
 @import "partials/activities";

@@ -1,0 +1,40 @@
+@import "utilities/variables";
+@import "utilities/mixins";
+
+nav {
+  display: flex;
+  @include responsive-values(flex-direction, row, (768: column));
+  justify-content: space-between;
+  @include responsive-sizes(height, 79, (768: 115));
+
+  & > a {
+    @include responsive-values(text-align, space-between, (768: center));
+    @include responsive-sizes(padding-block, 30);
+
+    img { @include responsive-sizes(height, 19); }
+  }
+
+  .navigation {
+    display: flex;
+    @include responsive-values(justify-content, space-between, (768: space-evenly));
+    @include responsive-values(width, resize(1440, 244), (1024: resize(1024, 244), 768: 100%));
+    @include responsive-sizes(height, 35, (768: 36));
+
+    a {
+      @include responsive-values(flex, 0 1 auto, (768: 1));
+      @include responsive-sizes(padding-top, 14, (768: 0));
+      @include responsive-values(border-bottom, none, (768: resize(768, 2) solid $light-grey));
+      @include responsive-values(text-align, left, (768: center));
+
+      &:hover {
+        @include responsive-sizes(border-top-width, 2, (768: 0));
+        @include responsive-sizes(border-bottom-width, 0, (768: 2));
+        @include responsive-values(border-top-style, solid, (768: none));
+        @include responsive-values(border-bottom-style, none, (768: solid));
+        border-color: $blue;
+        color: blue;
+      }
+    }
+  }
+
+}
