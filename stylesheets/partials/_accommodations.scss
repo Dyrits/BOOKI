@@ -7,7 +7,7 @@
   @include responsive-sizes(gap, 40, (1024: 50, 768: 15));
 
   & > article {
-    @include responsive-sizes(border-radius, 15);
+    @include responsive-sizes(border-radius, 15, (768: 0));
 
     .card {
       img {
