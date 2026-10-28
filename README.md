@@ -1,9 +1,26 @@
-# Booki
+# BOOKI
 
-The project has been remade using SCSS.
-It's a pixel-perfect copy of the original design, using fully relative units, based on mockups and style guide provided by the client.
-All the sizes are calculated in relation to the viewport width, so the website is fully responsive, but it's not possible to zoom in/out properly.
-The media queries are automatically generated using mixins.
-The website is fully functional, but there is no JavaScript code, so it's just a static page with no interactivity.
+A static, fully responsive travel agency page, rebuilt with SCSS.
 
-⚠️ It actually works perfectly only on Firefox.
+## About The Project
+
+A pixel-perfect copy of the original design, based on mockups and a style guide provided by the client, using fully relative units. All sizes are calculated in relation to the viewport width, so the website is fully responsive (though zooming in/out is not handled properly). Media queries are automatically generated using mixins. The website is fully functional as a static page: there is no JavaScript code, so no interactivity.
+
+Note: it currently works perfectly only on Firefox.
+
+### Built With
+
+- HTML5
+- SCSS (compiled to CSS)
+
+## Getting Started
+
+Open the HTML page in a browser.
+
+## License
+
+No license file is present in this repository.
+
+## Contact
+
+Dyrits - https://github.com/Dyrits
